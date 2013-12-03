@@ -1,0 +1,39 @@
+.loginbckg{
+margin: 0;
+      padding: 0; 
+      background: url(../images/Bouchons.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+
+.login-form{
+  padding: 20px;
+  background-color: #2c3e50;
+  margin-top: 40px;
+  color: #ffffff;
+}
+
+.login-form input {
+  width: 60%;
+
+}
+
+.login-footer{
+  text-align: right;
+  padding: 20px;
+}
+
+.login-body{
+  padding: 20px;
+}
+
+#login-header {
+  text-align: center;
+}
+
+
+@media (max-width: 375px) {
+  .login-form input {width: 100%;}
+}

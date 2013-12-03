@@ -1,0 +1,51 @@
+<!-- <div class="section container row"> 
+         <div class="col-md-8 col-md-offset-4 flat-container group-box">
+            <div class="row">
+              <div class="wine-info col-md-4">
+                  <div class="btn-group select select-block">
+                    <div class="dropdown">
+                        <button class="btn clearfix btn-primary dropdown-toggle">
+                          <span class="filter-option pull-left">Chateau La Moule</span>&nbsp;<span class="caret"></span>
+                        </button>
+                        <span class="dropdown-arrow dropdown-arrow-inverse"></span>
+                        <ul class="dropdown-menu dropdown-inverse" role="menu" style="overflow-y: auto;">
+                          <li ng-repeat="choice in choices">
+                            <a href="{{choice.link}}">{{choice.name}}</a>
+                          </li>
+                        </ul> 
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            </div>
+         </div> 
+</div>
+ -->
+
+
+
+
+
+<div class="section">
+
+    <div ng-repeat="wine in Wines">
+      <div class="wine-info col-md-3 span4 dropdown">
+          <div class="wine-name dropdown-toggle" ng-click="isCollapsed = !isCollapsed">
+            <p>{{wine.domaine}}<br>
+            {{wine.appellation}} - {{wine.millesime}}</p>
+          </div>
+          <div class="dropdown-menu">
+            <p>{{wine.description}}</p>
+          </div>
+          <div collapse="!isCollapsed">
+            <div class="well well-large">Some content</div> 
+          </div>
+          <a href="#/">
+          <div class="wine-rating">
+            <p><span class="fui-new"></span><p>
+          </div>
+      </div>
+    </div>
+
+</div>
+
