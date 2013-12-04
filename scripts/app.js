@@ -16,6 +16,14 @@ angular.module('vinifyApp', [
         templateUrl: 'views/vinibar.html',
         controller: 'VinibarCtrl'
       })
+      .when('/vinibar/wines/:id', {
+        templateUrl: 'views/wine-info.html',
+        controller: 'WineInfoCtrl'
+      })
+      .when('/vinibar/rating/:id', {
+        templateUrl: 'views/wine-rating.html',
+        controller: 'WineInfoCtrl'
+      })
       .when('/winelist', {
         templateUrl: 'views/winelist.html',
         controller: 'MainCtrl'
