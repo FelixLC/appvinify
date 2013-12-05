@@ -1,0 +1,1 @@
+Question portage du controller modal: en .controller ca ne marche pas, mais ca marche en variable générale

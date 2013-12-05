@@ -1,0 +1,19 @@
+<div class="container section">
+	<div class="span8">
+		<h4>{{vin.domaine}}, {{vin.appellation}}, {{vin.millesime}}</h4>
+
+		<div ng-controller="WineRatingCtrl" class="well well-small">
+		    <h5>Ma note pour le {{vin.domaine}} {{vin.millesime}} ({{vin.appellation}})</h5>
+		    <rating value="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+		    <span class="badge" ng-class="{'badge-warning': percent<30, 'badge-info': percent>=30 && percent<70, 'badge-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+		    <pre style="margin:15px 0">Note: <b>{{rate}}</b></pre>
+		    <hr>
+
+		    <div class="container-fluid" ng-controller="WineRatingCtrl">
+			    <pre>Je l'ai trouvé: {{selected| json}}</pre>
+			    <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8">
+			</div>
+	    </div>
+	</div>
+</div>
