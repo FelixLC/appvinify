@@ -10,8 +10,8 @@
 		    <pre style="margin:15px 0;">Note: <b>{{rate}}</b></pre>
 		    <hr />
 
-		    <div class='container-fluid' ng-controller="TypeaheadCtrl">
-			    <pre>Model: {{selected| json}}</pre>
+		    <div class='container-fluid' ng-controller="WineRatingCtrl">
+			    <pre>Je l'ai trouvé: {{selected| json}}</pre>
 			    <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8">
 			</div>
 	    </div>

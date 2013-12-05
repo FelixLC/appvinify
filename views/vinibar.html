@@ -21,6 +21,10 @@
          </div> 
 </div>
  -->
+<div ng-controller="GetWinesRESTCtrl">
+
+{{WINES[2]}}
+
 
 
 
@@ -30,8 +34,8 @@
       <div class="wine-info col-md-3 span4">
         <a href="#/vinibar/wines/{{$index + 1}}">
           <div class="wine-name">
-            <p>{{wine.domaine}}<br>
-            {{wine.appellation}} - {{wine.millesime}}</p>
+            <p>{{WINES[$index].domaine}}<br>
+            {{WINES[$index].appellation}} - {{WINES[$index].millesime}}</p>
           </div>
         </a>
         <a href="#/vinibar/rating/{{$index + 1}}">
@@ -42,5 +46,6 @@
       </div>
     </div>
 
+</div>
 </div>
 </div>

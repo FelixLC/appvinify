@@ -18,4 +18,7 @@ angular.module('vinifyApp')
         {stateOn: 'icon-heart'},
         {stateOff: 'icon-off'}
       ];
+
+    $scope.selected = undefined;
+    $scope.states = ['Sucré', 'Acide', 'Tannique'];
   });
