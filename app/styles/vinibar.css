@@ -1,11 +1,11 @@
 body {
-	/*margin-top: 50px;*/ /* 50px is the height of the navbar - change this if the navbar height changes */
-	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbar height changes */
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	
 }
 
 h1, h2, h3 {
-	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	font-weight: 700;
 }
 
@@ -58,7 +58,7 @@ body.modal-open,
   	border-bottom-right-radius:4px;
   	border-top-left-radius:4px;
   	border-top-right-radius:4px;
-  	font-family:Lato, Helvetica, Arial, sans-serif;
+  	font-family:Open Sans, Helvetica, Arial, sans-serif;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
     position: relative;
    
@@ -89,7 +89,7 @@ body.modal-open,
   	border-bottom-right-radius:4px;
   	border-top-left-radius:4px;
   	border-top-right-radius:4px;
-  	font-family:Lato, Helvetica, Arial, sans-serif;
+  	font-family:Open Sans, Helvetica, Arial, sans-serif;
 }
 
 
@@ -127,7 +127,7 @@ body.modal-open,
 	text-align: left;
 	border:none;
 	vertical-align: middle;
-  	font-family:Lato, Helvetica, Arial, sans-serif;
+  	font-family:Open Sans, Helvetica, Arial, sans-serif;
 }
 
 
@@ -196,8 +196,17 @@ body.modal-open,
 	width: 70px;
 }
 
+.linktoinfo:hover,
+.linktoinfo:focus,
+.linktoinfo:active {
+	color: #2980b9 ;	
+}
 
-
+.linktorating:hover,
+.linktorating:focus,
+.linktorating:active {
+	color: #2980b9 ;	
+}
 /* ---------------- LIKED WINES ---------------- */
 
 .table{
@@ -292,6 +301,10 @@ body {
 }
 
 @media (max-width: 375px) {
+
+.section {
+	margin: 0;
+}
 
 #vinibar{
 	margin-left: 10px;

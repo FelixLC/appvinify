@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/eadf778f.main.css"/>
+        <link rel="stylesheet" href="styles/38df9ff7.main.css"/>
 </head>
   <body ng-app="vinifyApp">
     <!--[if lt IE 7]>
@@ -25,32 +25,42 @@
 
     <!-- Add your site or application content here -->
 
-<div id="wrap"><!-- Wrapper for sticky footer -->
+<!-- <div id="wrap">
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
        
         <div class="navbar-header">
-           <a href="#top"><img alt="" src="../images/LogoVinifyFondSombre.svg" style="height:45px"></a>
+           <a href="#top"><img alt="" src="../images/LogoVinifyFondSombre.svg" style="height:45px"/></a>
         </div>
     </nav>
 
 
  
-    <div ng-view=""></div>
+    <div ng-view="" ng-animate="'slide'"></div>
 
 <div id="push"></div>
-</div> <!-- end wrap -->
+</div> 
 
 <div class="palette-midnight-blue" id="footer">
 
-      <!-- FOOTER -->
+
       <footer>
         <p>
           Copyright &copy; Vinify 2013 &middot; L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
         </p>
       </footer>
-      <!-- /END OF FOOTER -->
 
   </div>
+ -->
+<pane nav-router="" animation="slide-left-right-ios7">
+      <!-- The nav bar that will be updated as we navigate -->
+      <nav-bar class="nav-title-slide-ios7" type="bar-light" back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></nav-bar>
+
+      <!-- where the content of each page will be rendered -->
+      <ng-view></ng-view>
+    </pane>
+<!-- <div class="bar bar-header bar-light">
+  <h1 class="title">Vinify</h1>
+</div> -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -68,8 +78,8 @@
 
         <script src="scripts/6ef5c5aa.plugins.js"></script>
 
-        <script src="scripts/17475028.modules.js"></script>
+        <script src="scripts/5fd0b1b6.modules.js"></script>
 
-        <script src="scripts/9b93c97c.scripts.js"></script>
+        <script src="scripts/be2e0dfb.scripts.js"></script>
 </body>
 </html>

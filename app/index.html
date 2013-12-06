@@ -14,10 +14,11 @@
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/bootstrap2.css">
         <link rel="stylesheet" href="styles/bootstrap-responsive.css">
-        <link rel="stylesheet" href="styles/flat-ui.css"/>
+        <!-- <link rel="stylesheet" href="styles/flat-ui.css"/> -->
+        <!-- <link rel="stylesheet" href="styles/vinibar.css"/>
+        <link rel="stylesheet" href="styles/login.css"/> -->
+        <link rel="stylesheet" href="styles/ionic.css"/>
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/vinibar.css"/>
-        <link rel="stylesheet" href="styles/login.css"/>
         <!-- endbuild -->
 </head>
   <body ng-app="vinifyApp">
@@ -32,7 +33,7 @@
 
     <!-- Add your site or application content here -->
 
-<div id="wrap"><!-- Wrapper for sticky footer -->
+<!-- <div id="wrap">
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
        
         <div class="navbar-header">
@@ -42,22 +43,32 @@
 
 
  
-    <div ng-view=""></div>
+    <div ng-view="" ng-animate="'slide'"></div>
 
 <div id="push"></div>
-</div> <!-- end wrap -->
+</div> 
 
 <div class="palette-midnight-blue" id="footer">
 
-      <!-- FOOTER -->
+
       <footer>
         <p>
           Copyright &copy; Vinify 2013 &middot; L'abus d'alcool est dangereux pour la santé, à consommer avec modération.
         </p>
       </footer>
-      <!-- /END OF FOOTER -->
 
   </div>
+ -->
+<pane nav-router animation="slide-left-right-ios7">
+      <!-- The nav bar that will be updated as we navigate -->
+      <nav-bar class="nav-title-slide-ios7" type="bar-light" back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></nav-bar>
+
+      <!-- where the content of each page will be rendered -->
+      <ng-view></ng-view>
+    </pane>
+<!-- <div class="bar bar-header bar-light">
+  <h1 class="title">Vinify</h1>
+</div> -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -78,9 +89,15 @@
         <!-- endbuild -->
 
         <!-- build:js scripts/modules.js -->
+        <script src="bower_components/ionic/ionic.js"></script>
+        <script src="bower_components/ionic/ionic-angular.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-others/angular-touch.js"></script>
+        <script src="bower_components/angular-others/angular-animate.js"></script>
+        <script src="bower_components/angular-others/angular-sanitize.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-animate.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -91,10 +108,10 @@
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/modal.js"></script>
         <script src="scripts/services/CurrentWines.js"></script>
+        <script src="scripts/services/vinibar-resources.js"></script>
         <script src="scripts/services/RatedWines.js"></script>
         <script src="scripts/controllers/vinibar.js"></script>
         <script src="scripts/controllers/wine-rating.js"></script>
-        <script src="scripts/controllers/wine-info.js"></script>
         <!-- endbuild -->
 </body>
 </html>

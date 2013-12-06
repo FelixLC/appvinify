@@ -1,12 +1,18 @@
 'use strict';
 
-angular.module('vinifyApp', [
+angular.module('vinifyApp', ['ionic', 'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngRoute',
-  'ui.bootstrap'
+  'ngAnimate',
+  'ui.bootstrap',
 ])
-  .config(function ($routeProvider) {
+  .config(function ($compileProvider){
+  // Needed for routing to work
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  })
+
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/login.html',
@@ -14,7 +20,7 @@ angular.module('vinifyApp', [
       })
       .when('/vinibar', {
         templateUrl: 'views/vinibar.html',
-        controller: 'VinibarCtrl'
+        controller: 'GetWinesVinibarCtrl'
       })
       .when('/vinibar/wines/:id', {
         templateUrl: 'views/wine-info.html',
@@ -26,7 +32,7 @@ angular.module('vinifyApp', [
       })
       .when('/winelist', {
         templateUrl: 'views/winelist.html',
-        controller: 'MainCtrl'
+        controller: 'GetWinesVinibarCtrl'
       })
       .when('/welcome', {
         templateUrl: 'views/main.html',

@@ -1,18 +1,27 @@
 'use strict';
 angular.module('vinifyApp', [
+  'ionic',
+  'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngRoute',
+  'ngAnimate',
   'ui.bootstrap'
 ]).config([
+  '$compileProvider',
+  function ($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  }
+]).config([
   '$routeProvider',
-  function ($routeProvider) {
+  '$locationProvider',
+  function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl: 'views/login.html',
       controller: 'MainCtrl'
     }).when('/vinibar', {
       templateUrl: 'views/vinibar.html',
-      controller: 'VinibarCtrl'
+      controller: 'GetWinesVinibarCtrl'
     }).when('/vinibar/wines/:id', {
       templateUrl: 'views/wine-info.html',
       controller: 'WineInfoCtrl'
@@ -21,7 +30,7 @@ angular.module('vinifyApp', [
       controller: 'WineInfoCtrl'
     }).when('/winelist', {
       templateUrl: 'views/winelist.html',
-      controller: 'MainCtrl'
+      controller: 'GetWinesVinibarCtrl'
     }).when('/welcome', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
@@ -311,6 +320,28 @@ angular.module('vinifyApp').factory('WinesREST', [
   }
 ]);
 'use strict';
+angular.module('vinifyApp').factory('WinesVinibar', [
+  '$resource',
+  function ($resource) {
+    return $resource('http://devinify1.herokuapp.com/wines/');
+  }
+]).controller('GetWinesVinibarCtrl', [
+  '$scope',
+  'WinesVinibar',
+  function ($scope, WinesVinibar) {
+    $scope.WINES = WinesVinibar.query();
+    $scope.mytitle = 'Vinify';
+  }
+]).controller('WineInfoCtrl', [
+  'WinesVinibar',
+  '$scope',
+  '$routeParams',
+  function (WinesVinibar, $scope, $routeParams) {
+    $scope.id = $routeParams.id - 1;
+    $scope.WINE = WinesVinibar.query();
+  }
+]);
+'use strict';
 angular.module('vinifyApp').factory('RatedWines', function () {
   var meaningOfLife = 42;
   return {
@@ -352,56 +383,5 @@ angular.module('vinifyApp').controller('WineRatingCtrl', [
       'Acide',
       'Tannique'
     ];
-  }
-]);
-'use strict';
-angular.module('vinifyApp').factory('Wines', function () {
-  var WineList = [
-      {
-        'url': 'http://192.168.9.184:8000/wines/1/',
-        'couleur': 'Rouge',
-        'region': 'Bordeaux',
-        'appellation': 'Pauillac',
-        'domaine': 'Mouton Rotschild',
-        'cuvee': '',
-        'millesime': 1982,
-        'prix': 1350,
-        'description': 'Today, with an average price of $1,307 per bottle, Mouton 1982 is selling for more than 40 times its futures price\u2014a fabulous return on an investment.'
-      },
-      {
-        'url': 'http://192.168.9.184:8000/wines/2/',
-        'couleur': 'Rouge',
-        'region': 'Bordeaux',
-        'appellation': 'Pauillac',
-        'domaine': 'Mouton Rotschild',
-        'cuvee': '',
-        'millesime': 1982,
-        'prix': 1350,
-        'description': 'Today, with an average price of $1,307 per bottle, Mouton 1982 is selling for more than 40 times its futures price\u2014a fabulous return on an investment.'
-      },
-      {
-        'url': 'http://192.168.9.184:8000/wines/3/',
-        'couleur': 'Rouge',
-        'region': 'Bordeaux',
-        'appellation': 'Pauillac',
-        'domaine': 'De La Rochiere',
-        'cuvee': '',
-        'millesime': 2012,
-        'prix': 15,
-        'description': 'Un bon rouge qui tache'
-      }
-    ];
-  return {
-    getwines: function (id) {
-      return WineList[id];
-    }
-  };
-}).controller('WineInfoCtrl', [
-  'Wines',
-  '$scope',
-  '$routeParams',
-  function (Wines, $scope, $routeParams) {
-    var vino = $routeParams.id;
-    $scope.vin = Wines.getwines($routeParams.id - 1);
   }
 ]);
