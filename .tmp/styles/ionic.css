@@ -4258,6 +4258,7 @@ a.subdued:last-child {
 }
 
 .menu-animated {
+  transition: -webkit-transform 200ms ease;
   transition: transform 200ms ease;
 }
 
@@ -4891,6 +4892,7 @@ button.item-button-right:after {
 }
 
 .item-sliding {
+  transition: -webkit-transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out;
 }
 

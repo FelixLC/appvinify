@@ -2,13 +2,32 @@
 
 angular.module('vinifyApp')
   .controller('WineRatingCtrl', function ($scope) {
-    $scope.rate = 7;
+      $scope.rate = 4;
       $scope.max = 5;
       $scope.isReadonly = false;
 
       $scope.hoveringOver = function(value) {
-        $scope.overStar = value;
-        $scope.percent = 100 * (value / $scope.max);
+
+        if (value==1)
+            {
+            $scope.overStar = "Je n'ai pas aimé";
+            }
+          else if (value==2)
+            {
+            $scope.overStar = "Pas mal";
+            }
+          else if (value==3)
+            {
+            $scope.overStar="Bon";
+            }
+          else if (value==4)
+            {
+            $scope.overStar="Très Bon";
+            }
+          else if (value==5)
+            {
+            $scope.overStar="Excellent";
+            }
       };
 
       $scope.ratingStates = [

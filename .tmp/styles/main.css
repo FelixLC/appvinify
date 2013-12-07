@@ -49,6 +49,11 @@ body {
   color: #fff;
 }
 
+.fa-star,
+.fa-star-o {
+  color: #2C3E50;
+}
+
 .badge.badge-Rouge {
   background-color: #c0392b;
   color: white;
